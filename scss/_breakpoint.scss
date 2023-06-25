@@ -1,0 +1,33 @@
+@media (max-width:480px){
+    .toggleBtn{
+        display: flex;
+    }
+
+    .navbarLinks{
+        display: none;
+        width: 100%;
+        // border-radius: 1px;
+    }
+
+    .navbar{
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .navbarLinks ul{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .navbarLinks li{
+        text-align: center;
+    }
+
+    .navbarLinks li a{
+        padding: .5rem 1rem;
+    }
+
+    .navbarLinks.active{
+        display: flex;
+    }
+}

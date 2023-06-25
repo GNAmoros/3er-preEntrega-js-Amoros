@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1c3a7c;
+  color: azure;
+}
+
+.brandTitle {
+  font-size: 1.5rem;
+  margin: 2rem;
+}
+
+.navbarLinks ul {
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+.navbarLinks li {
+  list-style: none;
+}
+
+.navbarLinks li a {
+  text-decoration: none;
+  color: azure;
+  padding: 1rem;
+  display: block;
+}
+
+.navbarLinks li:hover {
+  background-color: coral;
+  border-radius: 25px;
+}
+
+.toggleBtn {
+  position: absolute;
+  top: 2rem;
+  right: 1rem;
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: 30px;
+  height: 21px;
+}
+
+.toggleBtn .bar {
+  height: 3px;
+  width: 100%;
+  background-color: azure;
+  border-radius: 10px;
+}
+
+@media (max-width: 480px) {
+  .toggleBtn {
+    display: flex;
+  }
+  .navbarLinks {
+    display: none;
+    width: 100%;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbarLinks ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .navbarLinks li {
+    text-align: center;
+  }
+  .navbarLinks li a {
+    padding: 0.5rem 1rem;
+  }
+  .navbarLinks.active {
+    display: flex;
+  }
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/*# sourceMappingURL=main.css.map */
