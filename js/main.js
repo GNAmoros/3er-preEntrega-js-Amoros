@@ -89,6 +89,7 @@ services.forEach(service => {
     aesthetic.appendChild(aesCard);
 }
 })
+
 function showModal(service) {
     const modal = document.createElement("div");
     modal.className = "modal";
@@ -120,7 +121,7 @@ function showModal(service) {
     modalBody.className = "modal-body";
     modalBody.innerHTML = `
         <p>Service ID: ${service.id}</p>
-        <p>Cost: ${service.cost}</p>
+        <p>Costo: ${service.cost}</p>
         <p>Area: ${service.area}</p>
     `;
 
@@ -148,6 +149,32 @@ function showModal(service) {
     const bootstrapModal = new bootstrap.Modal(modal);
     bootstrapModal.show();
 }
+
+function bookDate() {
+    const selectElement = document.getElementById('dateSelect');
+    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+
+    const selectedDate = new Date(selectedOption);
+
+    console.log('Booked date:', selectedDate.toISOString());
+  }
+
+  const bookedDates = []; // Array to store booked dates
+
+  function bookDate() {
+    const selectElement = document.getElementById('dateSelect');
+    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+
+    const selectedDate = new Date(selectedOption);
+
+    bookedDates.push(selectedDate);
+
+    console.log('Booked date:', selectedDate.toISOString());
+  }
+
+  function checkBookings() {
+    console.log('Booked dates:', bookedDates);
+  }
 
 let gineco = document.getElementById("productGineco");
 
