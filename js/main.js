@@ -6,89 +6,36 @@ toggleBtn.addEventListener('click', () => {
 })
 
 const services = [
-    { id: 1, name: "Acido hialuronico", cost: 45000, area: "Estetica", img:"acidohialuronico.webp"},
-    { id: 2, name: "Dermapen", cost: 7500, area: "Estetica", img:"dermapen.webp"},
-    { id: 3, name: "Fosfatidilcolina", cost: 8000, area: "Estetica", img:"fosfatidilcolina.webp"},
-    { id: 4, name: "Peeling quimico", cost: 4000, area: "Estetica", img:"peelingquimico.webp"},
-    { id: 5, name: "Pap/Colpo", cost: 1000, area: "Ginecologia"},
+    { id: 1, name: "Acido hialuronico", cost: 45000, area: "Estetica", description: " reduce la visibilidad de los signos del paso del tiempo al estimular a las células que producen elastina y colágeno", img: "acidohialuronico.webp" },
+    { id: 2, name: "Dermapen", cost: 7500, area: "Estetica", description: "dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", img: "dermapen.webp" },
+    { id: 3, name: "Fosfatidilcolina", cost: 8000, area: "Estetica", description: "elimine depósitos de grasa localizada del cuerpo, logrando un aspecto armonioso en muy poco tiempo", img: "fosfatidilcolina.webp" },
+    { id: 4, name: "Peeling quimico", cost: 4000, area: "Estetica", description: "exfoliación profunda de la piel del rostro", img: "peelingquimico.webp" },
+    { id: 5, name: "Pap/Colpo", cost: 1000, area: "Ginecologia" },
     { id: 6, name: "Test de HPV", cost: 1200, area: "Ginecologia" },
-    { id: 7, name: "Consejeria en salud sexual y reproductiva", cost: 3000, area: "Ginecologia"},
-    { id: 8, name: "Oncolginecologia", cost: 5000, area: "Ginecologia"},
-    { id: 9, name: "Obstetricia bajo/alto riesgo", cost: 7500, area: "Obstetricia"},
-    { id: 10, name: "Rehabilitacion del suelo pelvico", cost: 6000, area: "Obstetricia"},
-    { id: 11, name: "Post-parto", cost: 7500, area: "Obstetricia"},
-    { id: 12, name: "Curso pre-parto", cost: 5000, area: "Obstetricia"}
-]
-
-// const datesEstetica = [
-//     { day: "27/6", time: "16:00"},
-//     { day: "27/6", time: "16:30"},
-//     { day: "27/6", time: "17:00"},
-//     { day: "27/6", time: "17:30"},
-//     { day: "27/6", time: "18:00"},
-//     { day: "27/6", time: "18:30"},
-//     { day: "27/6", time: "19:00"},
-//     { day: "29/6", time: "16:00"},
-//     { day: "29/6", time: "16:30"},
-//     { day: "29/6", time: "17:00"},
-//     { day: "29/6", time: "17:30"},
-//     { day: "29/6", time: "18:00"},
-//     { day: "29/6", time: "18:30"},
-//     { day: "29/6", time: "19:00"}
-// ]
-
-// const datesGinecologia = [
-//     { day: "26/6", time: "16:00"},
-//     { day: "26/6", time: "16:30"},
-//     { day: "26/6", time: "17:00"},
-//     { day: "26/6", time: "17:30"},
-//     { day: "26/6", time: "18:00"},
-//     { day: "26/6", time: "18:30"},
-//     { day: "26/6", time: "19:00"},
-//     { day: "29/6", time: "16:00"},
-//     { day: "29/6", time: "16:30"},
-//     { day: "29/6", time: "17:00"},
-//     { day: "29/6", time: "17:30"},
-//     { day: "29/6", time: "18:00"},
-//     { day: "29/6", time: "18:30"},
-//     { day: "29/6", time: "19:00"}
-// ]
-
-// const datesObstetricia = [
-//     { day: "28/6", time: "16:00"},
-//     { day: "28/6", time: "16:30"},
-//     { day: "28/6", time: "17:00"},
-//     { day: "28/6", time: "17:30"},
-//     { day: "28/6", time: "18:00"},
-//     { day: "28/6", time: "18:30"},
-//     { day: "28/6", time: "19:00"},
-//     { day: "30/6", time: "16:00"},
-//     { day: "30/6", time: "16:30"},
-//     { day: "30/6", time: "17:00"},
-//     { day: "30/6", time: "17:30"},
-//     { day: "30/6", time: "18:00"},
-//     { day: "30/6", time: "18:30"},
-//     { day: "30/6", time: "19:00"}
-// ]
-
+    { id: 7, name: "Consejeria en salud sexual y reproductiva", cost: 3000, area: "Ginecologia" },
+    { id: 8, name: "Oncolginecologia", cost: 5000, area: "Ginecologia" },
+    { id: 9, name: "Obstetricia bajo/alto riesgo", cost: 7500, area: "Obstetricia" },
+    { id: 10, name: "Rehabilitacion del suelo pelvico", cost: 6000, area: "Obstetricia" },
+    { id: 11, name: "Post-parto", cost: 7500, area: "Obstetricia" },
+    { id: 12, name: "Curso pre-parto", cost: 5000, area: "Obstetricia" }
+];
 
 let aesthetic = document.getElementById("productAes");
 
 services.forEach(service => {
     if (service.area === "Estetica") {
-    let aesCard = document.createElement("div")
-    aesCard.className = "productCard"
-    aesCard.innerHTML = `
-        <h3>${service.name}<h3>
-        <img class="aesImg" src="../img/${service.img}">
-        <div class="aesImg" style="background-image: url(../img/${service.img}"></div>
+        let aesCard = document.createElement("div");
+        aesCard.className = "productCard";
+        aesCard.innerHTML = `
+            <h3>${service.name}<h3>
+            <img class="aesImg" src="../img/${service.img}">
         `;
-    aesCard.addEventListener("click", () => {
-        showModal(service);
-    });
-    aesthetic.appendChild(aesCard);
-}
-})
+        aesCard.addEventListener("click", () => {
+            showModal(service);
+        });
+        aesthetic.appendChild(aesCard);
+    }
+});
 
 function showModal(service) {
     const modal = document.createElement("div");
@@ -120,7 +67,7 @@ function showModal(service) {
     const modalBody = document.createElement("div");
     modalBody.className = "modal-body";
     modalBody.innerHTML = `
-        <p>Service ID: ${service.id}</p>
+        <p>${service.description}</p>
         <p>Costo: ${service.cost}</p>
         <p>Area: ${service.area}</p>
     `;
@@ -150,42 +97,25 @@ function showModal(service) {
     bootstrapModal.show();
 }
 
-function bookDate() {
-    const selectElement = document.getElementById('dateSelect');
-    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+console.log('desde index.js');
 
-    const selectedDate = new Date(selectedOption);
+const dateArray = JSON.parse(localStorage.getItem('dates')) || [];
 
-    console.log('Booked date:', selectedDate.toISOString());
-  }
+const btn = document.getElementById('saveDate');
 
-  const bookedDates = []; // Array to store booked dates
+const saveAppointment = () => {
+    const dateInput = document.getElementById('date');
+    const date = dateInput.value;
 
-  function bookDate() {
-    const selectElement = document.getElementById('dateSelect');
-    const selectedOption = selectElement.options[selectElement.selectedIndex].value;
+    if (date.trim() !== '') {
+        dateArray.push(date);
+        localStorage.setItem('dates', JSON.stringify(dateArray));
+        console.log(dateArray);
+        dateInput.value = '';
+    }
+};
 
-    const selectedDate = new Date(selectedOption);
-
-    bookedDates.push(selectedDate);
-
-    console.log('Booked date:', selectedDate.toISOString());
-  }
-
-  function checkBookings() {
-    console.log('Booked dates:', bookedDates);
-  }
-
-let gineco = document.getElementById("productGineco");
-
-services.forEach(service => {
-    if (service.area === "Ginecologia") {
-    let ginecoCard = document.createElement("div")
-    ginecoCard.className = "productCard"
-    ginecoCard.innerHTML = `
-        <h3>${service.name}<h3>
-        <div class="aesImg" style="background-image: url(../img/${service.img}"></div>
-        `
-    gineco.appendChild(aesCard)
-}
+btn.addEventListener('click', (e) => {
+    e.preventDefault();
+    saveAppointment();
 })
