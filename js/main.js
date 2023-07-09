@@ -5,6 +5,7 @@ toggleBtn.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
+document.addEventListener("DOMContentLoaded", function() {
 const services = [
     { id: 1, name: "Acido hialuronico", cost: 45000, area: "Estetica", description: " reduce la visibilidad de los signos del paso del tiempo al estimular a las células que producen elastina y colágeno", img: "acidohialuronico.webp" },
     { id: 2, name: "Dermapen", cost: 7500, area: "Estetica", description: "dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", img: "dermapen.webp" },
@@ -96,6 +97,7 @@ function showModal(service) {
     const bootstrapModal = new bootstrap.Modal(modal);
     bootstrapModal.show();
 }
+});
 
 console.log('desde index.js');
 
@@ -120,7 +122,7 @@ const saveAppointment = (name, date, time) => {
             appointmentData.push({ name, date, time });
             localStorage.setItem("appointments", JSON.stringify(appointmentData));
             console.log(appointmentData);
-            const modal = createModal("Success", "Reserva guardada exitosamente.");
+            const modal = createModal("Exito", "Reserva guardada exitosamente.");
             showModal(modal);
 
             const nameInput = document.getElementById("name");
@@ -131,7 +133,7 @@ const saveAppointment = (name, date, time) => {
             timeSelect.value = "";
         }
     } else {
-        const modal = createModal("Warning", "El horario elegido se encuentra fuera del horario de trabajo. Por favor elija un horario entre las 9:00 y las 18:00.");
+        const modal = createModal("Cuidado", "El horario elegido se encuentra fuera del horario de trabajo. Por favor elija un horario entre las 9:00 y las 18:00.");
         showModal(modal);
     }
 };
@@ -150,7 +152,7 @@ function createModal(title, message) {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
 
-    const modalTitle = document.createElement("h3");
+    const modalTitle = document.createElement("h5");
     modalTitle.className = "modal-title";
     modalTitle.textContent = title;
 
@@ -277,7 +279,7 @@ function displaySavedAppointments(appointments) {
     const modalHeader = document.createElement("div");
     modalHeader.className = "modal-header";
 
-    const modalTitle = document.createElement("h3");
+    const modalTitle = document.createElement("h5");
     modalTitle.className = "modal-title";
     modalTitle.textContent = "Saved Appointments";
 
@@ -285,7 +287,7 @@ function displaySavedAppointments(appointments) {
     closeButton.type = "button";
     closeButton.className = "btn-close";
     closeButton.setAttribute("data-bs-dismiss", "modal");
-    closeButton.setAttribute("aria-label", "Close");
+    closeButton.setAttribute("aria-label", "Cierre");
 
     modalHeader.appendChild(modalTitle);
     modalHeader.appendChild(closeButton);
