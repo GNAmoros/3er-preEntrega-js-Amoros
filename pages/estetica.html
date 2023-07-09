@@ -27,20 +27,21 @@
     </nav> 
     <main>
         <div id="productAes"></div>
-<!-- 
-        <select id="dateSelect">
-  <option value="2023-07-01">July 1, 2023</option>
-  <option value="2023-07-02">July 2, 2023</option>
-  <option value="2023-07-03">July 3, 2023</option>
-</select>
-<button onclick="bookDate()">Book Date</button> -->
-
-        <form action="">
-            <label for="date">
-                <input type="date" id="date" value="date">
-            </label>
+        <form>
+            <label for="name">Nombre:</label>
+            <input type="text" id="name">
+            <label for="date">Fecha:</label>
+            <input type="date" id="date">
+            <label for="time">Hora:</label>
+            <select id="time"></select>
             <button id="saveDate">Reserve su turno</button>
-        </form>
+          </form>
+          <form>
+            <label for="searchName">Busque por su nombre:</label>
+            <input type="text" id="searchName">
+            <button id="searchDate">Search</button>
+          </form>
+          <div id="savedAppointments"></div>
     </main>
 </body>
 <script src="../js/main.js"></script>
