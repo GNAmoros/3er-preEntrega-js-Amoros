@@ -23,6 +23,8 @@ const services = [
 
 let aesthetic = document.getElementById("productAes");
 const gynecology = services.filter((service) => service.area === "Ginecologia");
+const obstetrics = services.filter((service) => service.area === "Obstetricia");
+
 
 
 services.forEach(service => {
@@ -58,6 +60,26 @@ function populateGynecologyCards() {
 }
 
 populateGynecologyCards();
+
+function populateObstetricsCards() {
+    const obstetricsDiv = document.getElementById("productObs");
+
+    obstetrics.forEach((service) => {
+        let obsCard = document.createElement("div");
+        obsCard.className = "productCard";
+        obsCard.innerHTML = `
+            <h3>${service.name}</h3>
+            <!-- Add any other information or images here -->
+        `;
+        obsCard.addEventListener("click", () => {
+            showModal(service);
+        });
+        obstetricsDiv.appendChild(obsCard);
+    });
+}
+
+populateObstetricsCards();
+
 
 function showModal(service) {
     const modal = document.createElement("div");
@@ -230,7 +252,7 @@ saveBtn.addEventListener("click", (e) => {
     const time = timeSelect.value;
     const area = document.querySelector(".navbarLinks .active a")?.textContent;
 
-    if (name !== "" && date !== "" && time !== "") {
+    if (name !== "" && date !== "" && time !== "" && area !=="") {
         saveAppointment(name, date, time, area);
         nameInput.value = "";
         dateInput.value = "";

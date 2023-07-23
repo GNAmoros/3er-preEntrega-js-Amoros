@@ -18,42 +18,50 @@
         </a>
         <div class="navbarLinks">
             <ul>
-                <li><a href="./pages/estetica.html">Estetica</a></li>
-                <li><a href="./pages/ginecologica.html">Ginecologia</a></li>
-                <li><a href="./pages/obstetricia.html">Obstetricia</a></li>
-                <li><a href="./pages/contacto.html">Contacto</a></li>
+                <li><a href="#aesthetic">Estetica</a></li>
+                <li><a href="#gyn">Ginecologia</a></li>
+                <li><a href="#obs">Obstetricia</a></li>
+                <li><a href="#cont">Contacto</a></li>
             </ul>
         </div>
     </nav> 
     <main>
-        <h2>Bienvenido a nuestra clínica de obstetricia y ginecología, donde nos esforzamos por brindar atención de la más alta calidad. 
+        <h2 class="intro">Bienvenido a nuestra clínica de obstetricia y ginecología, donde nos esforzamos por brindar atención de la más alta calidad. 
             Entendemos que las mujeres tienen necesidades de atención médica únicas y estamos aquí para brindar atención personalizada que aborde sus inquietudes específicas. Ya sea que busque atención ginecológica de rutina, servicios de planificación familiar o atención prenatal y posparto, estamos comprometidos a brindarle la mejor atención posible.</h2>
-        <section>
-            <h3>Estetica</h3>
-            <p>nuestro Departamento de Estetica, donde la belleza se encuentra con la ciencia para ayudarlo a verse y sentirse lo mejor posible. Nuestro equipo de profesionales experimentados se dedica a brindar lo último en tratamientos estéticos y tecnologías para ayudarlo a alcanzar sus objetivos de belleza.
+        <section id="aesthetic">
+            <h3 class="header">Estetica</h3>
+            <p class="info">nuestro Departamento de Estetica, donde la belleza se encuentra con la ciencia para ayudarlo a verse y sentirse lo mejor posible. Nuestro equipo de profesionales experimentados se dedica a brindar lo último en tratamientos estéticos y tecnologías para ayudarlo a alcanzar sus objetivos de belleza.
                 Nuestra gama de servicios incluye, desde tratamientos para el cuidado de la piel y faciales hasta contorno corporal y procedimientos cosméticos. Nuestro equipo de expertos trabaja con usted para crear un plan de tratamiento personalizado que aborde sus necesidades e inquietudes únicas.
                 Entendemos que la decisión de someterse a un tratamiento estético puede ser personal y estamos comprometidos a brindarle el más alto nivel de cuidado y atención. Nuestro objetivo es ayudarle a alcanzar sus metas de belleza de una manera segura y efectiva, con resultados que superen sus expectativas</p>
         </section>
         <div id="productAes"></div>
-        <section>
-            <h3>Ginecologia</h3>
-            <p>En nuestro Departamento de Ginecología brindamos atención integral para mujeres de todas las edades.
+        <section id="gyn">
+            <h3 class="header">Ginecologia</h3>
+            <p class="info">En nuestro Departamento de Ginecología brindamos atención integral para mujeres de todas las edades.
                 Entendemos que las mujeres tienen necesidades de atención médica únicas por lo que estamos comprometidos a brindar atención personalizada que aborde sus inquietudes específicas. Ya sea que busque atención ginecológica de rutina, servicio de planificación familiar o atención especializada para una afección ginecológica. Estamos aquí para brindarle la mejor atención posible.
                 Nos esforzamos por brindarles a nuestros pacientes la información y los recursos que necesitan para tomar decisiones informadas sobre su salud y bienestar. Nuestro equipo de expertos está siempre disponible para responder a sus preguntas y proporcionar orientación según sea necesario.</p>
         </section>
         <div id="productGin"></div>
-        <section>
-            <h3>Obstetricia</h3>
-            <p>Nuestro equipo de profesionales de la salud experimentados se dedica a brindar una atención excepcional a las futuras madres y a sus bebés. Nuestras instalaciones de última generación, tecnología avanzada y enfoque personalizado de atención aseguran que cada embarazo se cumpla con el más alto nivel de atención y experiencia. Estamos comprometidos a apoyarla a usted y a su familia en cada etapa de su embarazo, desde la preconcepción hasta la atención posparto.</p>
+        <section id="obs">
+            <h3 class="header">Obstetricia</h3>
+            <p class="info">Nuestro equipo de profesionales de la salud experimentados se dedica a brindar una atención excepcional a las futuras madres y a sus bebés. Nuestras instalaciones de última generación, tecnología avanzada y enfoque personalizado de atención aseguran que cada embarazo se cumpla con el más alto nivel de atención y experiencia. Estamos comprometidos a apoyarla a usted y a su familia en cada etapa de su embarazo, desde la preconcepción hasta la atención posparto.</p>
         </section>
         <div id="productObs"></div>
+        <div id="cont" class="contact">
         <form class="contactForm">
             <label for="name">Nombre:</label>
             <input type="text" id="name">
             <label for="date">Fecha:</label>
             <input type="date" id="date">
             <label for="time">Hora:</label>
-            <select id="time"></select>
+            <select id="time" required></select>
+            <label for="area">Área:</label>
+    <select id="area" required>
+        <option value="">Seleccione un área</option>
+        <option value="Estetica">Estetica</option>
+        <option value="Ginecologia">Ginecologia</option>
+        <option value="Obstetricia">Obstetricia</option>
+    </select>
             <button id="saveDate">Reserve su turno</button>
           </form>
           <form>
@@ -62,6 +70,7 @@
             <button id="searchDate">Search</button>
           </form>
           <div id="savedAppointments"></div>
+        </div>
     </main>
     <script src="./js/main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-geWF76RCwLtnZ8qwWowPQNguL3RmwHVBC9FhGdlKrxdiJJigb/j/68SIy3Te4Bkz" crossorigin="anonymous"></script>
