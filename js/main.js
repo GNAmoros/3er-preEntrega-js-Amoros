@@ -11,14 +11,14 @@ const services = [
     { id: 2, name: "Dermapen", cost: 7500, area: "Estetica", description: "dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", img: "dermapen.webp" },
     { id: 3, name: "Fosfatidilcolina", cost: 8000, area: "Estetica", description: "elimine depósitos de grasa localizada del cuerpo, logrando un aspecto armonioso en muy poco tiempo", img: "fosfatidilcolina.webp" },
     { id: 4, name: "Peeling quimico", cost: 4000, area: "Estetica", description: "exfoliación profunda de la piel del rostro", img: "peelingquimico.webp" },
-    { id: 5, name: "Pap/Colpo", cost: 1000, area: "Ginecologia" },
-    { id: 6, name: "Test de HPV", cost: 1200, area: "Ginecologia" },
-    { id: 7, name: "Consejeria en salud sexual y reproductiva", cost: 3000, area: "Ginecologia" },
-    { id: 8, name: "Oncolginecologia", cost: 5000, area: "Ginecologia" },
-    { id: 9, name: "Obstetricia bajo/alto riesgo", cost: 7500, area: "Obstetricia" },
-    { id: 10, name: "Rehabilitacion del suelo pelvico", cost: 6000, area: "Obstetricia" },
-    { id: 11, name: "Post-parto", cost: 7500, area: "Obstetricia" },
-    { id: 12, name: "Curso pre-parto", cost: 5000, area: "Obstetricia" }
+    { id: 5, name: "Pap/Colpo", cost: 1000, area: "Ginecologia", description:"" , img: "colpo.webp" },
+    { id: 6, name: "Test de HPV", cost: 1200, area: "Ginecologia",description:"" , img:"hpv.webp" },
+    { id: 7, name: "Consejeria en salud sexual y reproductiva", cost: 3000, area: "Ginecologia",description:"" , img:"consejeria.webp" },
+    { id: 8, name: "Oncolginecologia", cost: 5000, area: "Ginecologia",description: "" , img:"onco.webp" },
+    { id: 9, name: "Obstetricia bajo/alto riesgo", cost: 7500, area: "Obstetricia", description: "" , img:"bajoalto.webp"},
+    { id: 10, name: "Rehabilitacion del suelo pelvico", cost: 6000, area: "Obstetricia",description: "" , img:"suelopelvico.webp" },
+    { id: 11, name: "Post-parto", cost: 7500, area: "Obstetricia",description: "" , img:"postparto.webp" },
+    { id: 12, name: "Curso pre-parto", cost: 5000, area: "Obstetricia",description: "" , img:"preparto.webp" }
 ];
 
 let aesthetic = document.getElementById("productAes");
@@ -50,7 +50,7 @@ function populateGynecologyCards() {
         ginCard.className = "productCard";
         ginCard.innerHTML = `
             <h3>${service.name}</h3>
-            <!-- Add any other information or images here -->
+            <img class="aesImg" src="../img/${service.img}">
         `;
         ginCard.addEventListener("click", () => {
             showModal(service);
@@ -69,7 +69,7 @@ function populateObstetricsCards() {
         obsCard.className = "productCard";
         obsCard.innerHTML = `
             <h3>${service.name}</h3>
-            <!-- Add any other information or images here -->
+            <img class="aesImg" src="../img/${service.img}">
         `;
         obsCard.addEventListener("click", () => {
             showModal(service);
