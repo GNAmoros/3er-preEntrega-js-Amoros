@@ -35,7 +35,7 @@
 }
 
 .navbarLinks li:hover {
-  background-color: coral;
+  background-color: rgb(75, 156, 248);
   border-radius: 25px;
 }
 
@@ -69,6 +69,29 @@
   border: 4px solid #111;
   border-radius: 10px;
   margin: 1px;
+}
+
+.contactForm {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  border: outset 2px #1c3a7c;
+  padding: 1rem;
+  border-radius: 5px;
+  font-family: "Roboto", sans-serif;
+  background-color: rgb(130, 183, 244);
+}
+
+.contactInput {
+  background-color: rgb(224, 247, 244);
+}
+
+.contactInput:hover {
+  background-color: rgb(33, 146, 251);
+}
+
+.contactForm input {
+  border-radius: 5px;
 }
 
 @media (max-width: 480px) {

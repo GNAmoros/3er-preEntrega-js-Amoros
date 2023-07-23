@@ -22,6 +22,8 @@ const services = [
 ];
 
 let aesthetic = document.getElementById("productAes");
+const gynecology = services.filter((service) => service.area === "Ginecologia");
+
 
 services.forEach(service => {
     if (service.area === "Estetica") {
@@ -37,6 +39,25 @@ services.forEach(service => {
         aesthetic.appendChild(aesCard);
     }
 });
+
+function populateGynecologyCards() {
+    const gynecologyDiv = document.getElementById("productGin");
+
+    gynecology.forEach((service) => {
+        let ginCard = document.createElement("div");
+        ginCard.className = "productCard";
+        ginCard.innerHTML = `
+            <h3>${service.name}</h3>
+            <!-- Add any other information or images here -->
+        `;
+        ginCard.addEventListener("click", () => {
+            showModal(service);
+        });
+        gynecologyDiv.appendChild(ginCard);
+    });
+}
+
+populateGynecologyCards();
 
 function showModal(service) {
     const modal = document.createElement("div");
@@ -103,7 +124,7 @@ console.log('desde index.js');
 
 let appointmentData = JSON.parse(localStorage.getItem("appointments")) || [];
 
-const saveAppointment = (name, date, time) => {
+const saveAppointment = (name, date, time, area) => {
     const startTime = new Date(date + "T09:00:00");
     const endTime = new Date(date + "T18:00:00");
 
@@ -111,7 +132,7 @@ const saveAppointment = (name, date, time) => {
 
     const existingAppointment = appointmentData.find(
         (appointment) =>
-            appointment.date === date && appointment.time === time
+            appointment.date === date && appointment.time === time && appointment.area === area
     );
 
     if (selectedTime >= startTime && selectedTime <= endTime) {
@@ -119,7 +140,7 @@ const saveAppointment = (name, date, time) => {
             const modal = createModal("Error", "Ya hay una reserva para la misma fecha y hora. Por favor, elija otro horario.");
             showModal(modal);
         } else {
-            appointmentData.push({ name, date, time });
+            appointmentData.push({ name, date, time, area });
             localStorage.setItem("appointments", JSON.stringify(appointmentData));
             console.log(appointmentData);
             const modal = createModal("Exito", "Reserva guardada exitosamente.");
@@ -207,9 +228,10 @@ saveBtn.addEventListener("click", (e) => {
     const name = nameInput.value.trim();
     const date = dateInput.value;
     const time = timeSelect.value;
+    const area = document.querySelector(".navbarLinks .active a")?.textContent;
 
     if (name !== "" && date !== "" && time !== "") {
-        saveAppointment(name, date, time);
+        saveAppointment(name, date, time, area);
         nameInput.value = "";
         dateInput.value = "";
         timeSelect.value = "";
