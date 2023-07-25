@@ -149,20 +149,20 @@ const saveAppointment = (name, date, time, area) => {
 
     const selectedTime = new Date(date + "T" + time);
 
-    const existingAppointment = appointmentData.find(
+    const existingAppointmentSameDateTimeArea = appointmentData.find(
         (appointment) =>
             appointment.date === date && appointment.time === time && appointment.area === area
     );
 
     if (selectedTime >= startTime && selectedTime <= endTime) {
-        if (existingAppointment) {
-            const modal = createModal("Error", "Ya hay una reserva para la misma fecha y hora. Por favor, elija otro horario.");
+        if (existingAppointmentSameDateTimeArea) {
+            const modal = createModal("Error", `Ya hay una reserva para la misma fecha y hora en el área de ${area}. Por favor, elija otro horario.`);
             showModal(modal);
         } else {
             appointmentData.push({ name, date, time, area });
             localStorage.setItem("appointments", JSON.stringify(appointmentData));
             console.log(appointmentData);
-            const modal = createModal("Exito", "Reserva guardada exitosamente.");
+            const modal = createModal("Éxito", "Reserva guardada exitosamente.");
             showModal(modal);
 
             const nameInput = document.getElementById("name");

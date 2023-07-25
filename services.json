@@ -12,7 +12,7 @@
         "name": "Dermapen", 
         "cost": 7500, 
         "area": "Estetica", 
-        "description": "dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", 
+        "description": "Dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", 
         "img": "dermapen.webp" 
     },
     { 
@@ -20,7 +20,7 @@
         "name": "Fosfatidilcolina", 
         "cost": 8000, 
         "area": "Estetica", 
-        "description": "elimine depósitos de grasa localizada del cuerpo, logrando un aspecto armonioso en muy poco tiempo", 
+        "description": "Elimine depósitos de grasa localizada del cuerpo, logrando un aspecto armonioso en muy poco tiempo", 
         "img": "fosfatidilcolina.webp" 
     },
     { 
@@ -28,7 +28,7 @@
         "name": "Peeling quimico", 
         "cost": 4000, 
         "area": "Estetica", 
-        "description": "exfoliación profunda de la piel del rostro", 
+        "description": "Exfoliación profunda de la piel del rostro", 
         "img": "peelingquimico.webp" 
     },
     { 

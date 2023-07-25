@@ -1,0 +1,9 @@
+Proyecto Freyja
+
+Como proyecto final para el curso de JavaScript, retome el trabajo realizado en el curso de Desarrollo Web aplicando los visto urante la cursada.
+
+Es un proyecto de que tiene mi novia junto con 3 colegas mas para abrir una clinica Gineco-Obstetrica, lo cual me sirvio de idea principal. Se que tiene mucho a trabajar en relacion a la parte estetica pero en este poryecto la idea era enfocarme principalmente en implementar JS y desarrollar sus logicas.
+
+Se apunto a poder mostrar distintos servicios que ofreceria la clinica, con informacion de los mismos y que las personas puedan reservar turnos tambien por este medio. 
+
+Cuando continue la parte de BackEnd quisiera poder desarrollar para poder enviar mail de confirmacion y realizar base de datos con los cuales las personas tambien puedan acceder a resultados de estudios por ej.
