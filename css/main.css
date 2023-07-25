@@ -136,7 +136,7 @@ body {
   #productAes {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0;
+    gap: 10;
   }
   #productAes h3 {
     white-space: nowrap;
@@ -151,11 +151,7 @@ body {
   #productObs {
     display: grid !important;
     grid-template-columns: repeat(2, 1fr);
-    gap: 0;
-  }
-  .aesImg {
-    width: 15px;
-    height: 13px;
+    gap: 10;
   }
   .productCard {
     width: 100%;

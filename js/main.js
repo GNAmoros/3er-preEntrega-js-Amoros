@@ -30,7 +30,7 @@ services.forEach(service => {
         aesCard.className = "productCard";
         aesCard.innerHTML = `
             <h3>${service.name}</h3>
-            <img class="aesImg" src="../img/${service.img}">
+            <img class="aesImg" src="./img/${service.img}">
         `;
         aesCard.addEventListener("click", () => {
             showModal(service);
@@ -66,7 +66,7 @@ function populateObstetricsCards() {
         obsCard.className = "productCard";
         obsCard.innerHTML = `
             <h3>${service.name}</h3>
-            <img class="aesImg" src="../img/${service.img}">
+            <img class="aesImg" src="./img/${service.img}">
         `;
         obsCard.addEventListener("click", () => {
             showModal(service);

@@ -37,7 +37,7 @@
     #productAes{
         display: grid !important;
         grid-template-columns: repeat(2,1fr);
-        gap: 0;
+        gap: 10;
         
 }
     #productAes h3{
@@ -55,12 +55,7 @@
 #productObs{
     display: grid !important;
     grid-template-columns: repeat(2,1fr);
-    gap: 0;
-}
-
-.aesImg {
-    width: 15px;
-    height: 13px;
+    gap: 10;
 }
 
 .productCard {
