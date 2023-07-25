@@ -5,21 +5,18 @@ toggleBtn.addEventListener('click', () => {
     navbarLinks.classList.toggle('active')
 })
 
-document.addEventListener("DOMContentLoaded", function() {
-const services = [
-    { id: 1, name: "Acido hialuronico", cost: 45000, area: "Estetica", description: " reduce la visibilidad de los signos del paso del tiempo al estimular a las células que producen elastina y colágeno", img: "acidohialuronico.webp" },
-    { id: 2, name: "Dermapen", cost: 7500, area: "Estetica", description: "dispositivo de microagujas que se utiliza en tratamientos faciales estéticos para rejuvenecer y mejorar la apariencia de la piel", img: "dermapen.webp" },
-    { id: 3, name: "Fosfatidilcolina", cost: 8000, area: "Estetica", description: "elimine depósitos de grasa localizada del cuerpo, logrando un aspecto armonioso en muy poco tiempo", img: "fosfatidilcolina.webp" },
-    { id: 4, name: "Peeling quimico", cost: 4000, area: "Estetica", description: "exfoliación profunda de la piel del rostro", img: "peelingquimico.webp" },
-    { id: 5, name: "Pap/Colpo", cost: 1000, area: "Ginecologia", description:"" , img: "colpo.webp" },
-    { id: 6, name: "Test de HPV", cost: 1200, area: "Ginecologia",description:"" , img:"hpv.webp" },
-    { id: 7, name: "Consejeria en salud sexual y reproductiva", cost: 3000, area: "Ginecologia",description:"" , img:"consejeria.webp" },
-    { id: 8, name: "Oncolginecologia", cost: 5000, area: "Ginecologia",description: "" , img:"onco.webp" },
-    { id: 9, name: "Obstetricia bajo/alto riesgo", cost: 7500, area: "Obstetricia", description: "" , img:"bajoalto.webp"},
-    { id: 10, name: "Rehabilitacion del suelo pelvico", cost: 6000, area: "Obstetricia",description: "" , img:"suelopelvico.webp" },
-    { id: 11, name: "Post-parto", cost: 7500, area: "Obstetricia",description: "" , img:"postparto.webp" },
-    { id: 12, name: "Curso pre-parto", cost: 5000, area: "Obstetricia",description: "" , img:"preparto.webp" }
-];
+document.addEventListener("DOMContentLoaded", async function() {
+let servies = [];
+
+try {
+    const response = await fetch ("services.json");
+    if (!response.ok) {
+        throw new Error ("la respuesta de la red no fue correcta");
+    }
+    services = await response.json();
+} catch (err) {
+    console.err("Error al obtener datos de servicios", err);
+}
 
 let aesthetic = document.getElementById("productAes");
 const gynecology = services.filter((service) => service.area === "Ginecologia");
