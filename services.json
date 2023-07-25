@@ -36,7 +36,7 @@
         "name": "Pap/Colpo", 
         "cost": 1000, 
         "area": "Ginecologia", 
-        "description":"" , 
+        "description":"Procedimiento para examinar detenidamente el cuello del útero, la vagina y la vulva en busca de signos de enfermedades" , 
         "img": "colpo.webp" 
     },
     { 
@@ -52,14 +52,14 @@
         "name": "Consejeria en salud sexual y reproductiva", 
         "cost": 3000, 
         "area": "Ginecologia",
-        "description":"" , 
+        "description":"Espacio de encuentro, escucha e información donde se brinda asesoramiento personalizado para que puedan tomar decisiones autónomas e informadas sobre su sexualidad" , 
         "img":"consejeria.webp" 
     },
     { 
         "id": 8, "name": "Oncolginecologia", 
         "cost": 5000, 
         "area": "Ginecologia",
-        "description": "" , 
+        "description": "Diagnóstico y el tratamiento del cáncer de los órganos reproductores femeninos" , 
         "img":"onco.webp" 
     },
     { 
@@ -74,7 +74,7 @@
         "name": "Rehabilitacion del suelo pelvico", 
         "cost": 6000, 
         "area": "Obstetricia",
-        "description": "" , 
+        "description": "Consiste en fortalecer los músculos de alrededor de la vejiga, la vagina" , 
         "img":"suelopelvico.webp" 
     },
     { 

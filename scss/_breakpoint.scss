@@ -29,4 +29,56 @@
     .navbarLinks.active{
         display: flex;
     }
+
+    body {
+        width: 95vw !important;
+    }
+
+    #productAes{
+        display: grid !important;
+        grid-template-columns: repeat(2,1fr);
+        gap: 0;
+        
 }
+    #productAes h3{
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    #productGin{
+        display: grid !important;
+        grid-template-columns: repeat(2,1fr);
+        gap: 10px;
+}
+
+#productObs{
+    display: grid !important;
+    grid-template-columns: repeat(2,1fr);
+    gap: 0;
+}
+
+.aesImg {
+    width: 15px;
+    height: 13px;
+}
+
+.productCard {
+    width: 100%;
+    max-width: 200px ;
+    height: auto ;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid #111;
+    border-radius: 10px;
+    margin: 3px;
+}
+
+.contactForm{
+    width: 85%;
+}
+}
+
+
+

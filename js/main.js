@@ -11,7 +11,7 @@ let servies = [];
 try {
     const response = await fetch ("services.json");
     if (!response.ok) {
-        throw new Error ("la respuesta de la red no fue correcta");
+        throw new Error ("La respuesta de la red no fue correcta");
     }
     services = await response.json();
 } catch (err) {
@@ -29,9 +29,9 @@ services.forEach(service => {
         let aesCard = document.createElement("div");
         aesCard.className = "productCard";
         aesCard.innerHTML = `
-        <h3>${service.name}</h3>
-        <img class="aesImg" src="../img/${service.img}">
-      `;
+            <h3>${service.name}</h3>
+            <img class="aesImg" src="../img/${service.img}">
+        `;
         aesCard.addEventListener("click", () => {
             showModal(service);
         });
@@ -47,7 +47,7 @@ function populateGynecologyCards() {
         ginCard.className = "productCard";
         ginCard.innerHTML = `
             <h3>${service.name}</h3>
-            <img class="aesImg" src="../img/${service.img}">
+            <img class="aesImg" src="./img/${service.img}">
         `;
         ginCard.addEventListener("click", () => {
             showModal(service);

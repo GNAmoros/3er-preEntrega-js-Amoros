@@ -1,7 +1,6 @@
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+body {
+  width: 95vw !important;
+  margin: 0 auto !important;
 }
 
 .navbar {
@@ -106,6 +105,73 @@
   text-align: center;
 }
 
+@media (max-width: 480px) {
+  .toggleBtn {
+    display: flex;
+  }
+  .navbarLinks {
+    display: none;
+    width: 100%;
+  }
+  .navbar {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .navbarLinks ul {
+    width: 100%;
+    flex-direction: column;
+  }
+  .navbarLinks li {
+    text-align: center;
+  }
+  .navbarLinks li a {
+    padding: 0.5rem 1rem;
+  }
+  .navbarLinks.active {
+    display: flex;
+  }
+  body {
+    width: 95vw !important;
+  }
+  #productAes {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  #productAes h3 {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  #productGin {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 10px;
+  }
+  #productObs {
+    display: grid !important;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0;
+  }
+  .aesImg {
+    width: 15px;
+    height: 13px;
+  }
+  .productCard {
+    width: 100%;
+    max-width: 200px;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 4px solid #111;
+    border-radius: 10px;
+    margin: 3px;
+  }
+  .contactForm {
+    width: 85%;
+  }
+}
 .aesImg {
   width: 150px;
   height: 135px;
@@ -119,7 +185,6 @@
   border: 4px solid #111;
   border-radius: 10px;
   margin: 3px;
-  gap: 2rem;
 }
 
 #productAes {
